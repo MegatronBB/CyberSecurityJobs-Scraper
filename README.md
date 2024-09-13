@@ -84,11 +84,12 @@ if response.status_code == 200:
     jobs = data.get('data', [])
     job_list = []
 
-    # Extract job details and prepare data for CSV
+    # Extract job details and prepare data for CSV 
+    
+# Data cleaning and handling
 job_list = []
 
 for job in jobs:
-    # Data cleaning and handling
     job_id = job.get('job_id', 'N/A').strip()
     employer_name = job.get('employer_name', 'N/A').strip()
     employer_logo = job.get('employer_logo', 'N/A').strip()
@@ -140,7 +141,7 @@ for job in jobs:
     job_occupational_categories = ', '.join(job.get('job_occupational_categories', [])) if isinstance(job.get('job_occupational_categories', []), list) else 'N/A'
 
 
-    # Append cleaned and formatted data to job list
+ # Append cleaned and formatted data to job list
     job_info = {
         'Job Title': job_title,
         'Company Name': employer_name,
@@ -160,7 +161,7 @@ for job in jobs:
         'Job Remote': job_is_remote
     }
 
-    # Append the job information to the job list
+# Append the job information to the job list
     job_list.append(job_info)
 
 # Sort the job list by 'Job Title' and then by 'Company Name'
@@ -173,9 +174,7 @@ headers = [
     'Company Reviews', 'Job Remote'
 ]
 
-
-
-    # Write cleaned and sorted data to a CSV file
+# Write cleaned and sorted data to a CSV file
 with open('jobs_data.csv', 'w', newline='', encoding='utf-8') as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=headers)
         writer.writeheader()
