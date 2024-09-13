@@ -1,6 +1,6 @@
 ![AIM](AIM.jpg)
 
-# Cybersecurity Job Scraper
+## Cybersecurity Job Scraper
 This Python script is designed to scrape entry-level cyber security job postings from the [JSearch API](https://rapidapi.com/jsearch/api/job-search). It retrieves job data, processes it, and saves it into both JSON and CSV formats for easy analysis.
  Overview
 The script performs the following tasks:
@@ -10,19 +10,19 @@ The script performs the following tasks:
 3. **Save Data**: It saves the raw data into a JSON file and formats the data for CSV output.
 4. **Export Data**: It writes the formatted data into a CSV file.
 
-# Prerequisites
+## Prerequisites
 - Python 3.x
 - `requests` library
 - `json` library (standard in Python)
 - `csv` library (standard in Python)
 - `datetime` library (standard in Python)
 
-# Installations 
+## Installations 
 Install the `requests` library if you haven't already:
 
 pip install requests
  
-# How It Works
+## How It Works
 1.	API Request:
 ○	The script defines the API URL and query parameters for retrieving job postings.
 ○	It includes headers for authentication with the JSearch API.
@@ -39,12 +39,12 @@ pip install requests
 5.	Write to CSV:
 ○	It writes the formatted job data into a CSV file named jobs_data.csv with appropriate headers.
 
-# Usage
+## Usage
 1.	Set Up Your API Key: Replace YOUR_RAPIDAPI_KEY in the headers dictionary with your own RapidAPI key.
 2.	Run the Script: Execute the script using Python. It will fetch the job data, process it, and create jobs_data.json and jobs_data.csv files in the current directory.
 3.	Review Output: Check the jobs_data.json for raw data and jobs_data.csv for the formatted data.
 
-# Notes
+## Notes
 ●	Ensure you have a valid API key from RapidAPI.
 ●	The API query is set to retrieve jobs related to "cybersecurity". Modify the query string parameters if you need different search criteria.
 ●	The script handles basic data cleaning and formatting. Further customization may be needed based on specific requirements or API changes. For further information or assistance, please refer to the RapidAPI documentation or contact the API provider.
