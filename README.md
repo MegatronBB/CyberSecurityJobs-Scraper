@@ -165,7 +165,7 @@ if response.status_code == 200:
     job_list.append(job_info)
 
 # Sort the job list by 'Job Title' and then by 'Company Name'
-job_list.sort(key=lambda x: (x['Job Title'], x['Company Name']))
+    # job_list.sort(key=lambda x: (x['Job Title'], x['Company Name']))
 
 # Define CSV file headers
 headers = [
@@ -175,11 +175,10 @@ headers = [
 ]
 
 # Write cleaned and sorted data to a CSV file
-with open('jobs_data.csv', 'w', newline='', encoding='utf-8') as csv_file:
+    # with open('jobs_data.csv', 'w', newline='', encoding='utf-8') as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=headers)
         writer.writeheader()
         writer.writerows(job_list)
-
-print("Data has been successfully written to jobs_data.json and jobs_data.csv")
+     print("Data has been successfully written to jobs_data.json and jobs_data.csv")
 
 
