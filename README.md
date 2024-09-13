@@ -89,8 +89,7 @@ if response.status_code == 200:
 # Data cleaning and handling
 
     # job_list = []
-    
-for job in jobs:
+    for job in jobs:
     job_id = job.get('job_id', 'N/A').strip()
     employer_name = job.get('employer_name', 'N/A').strip()
     employer_logo = job.get('employer_logo', 'N/A').strip()
