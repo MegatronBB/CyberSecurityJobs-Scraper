@@ -51,28 +51,27 @@ pip install requests
 This `README.md` provides a clear overview of how the script works, installation instructions, and usage guidelines. Feel free to customize it further based on your specific needs or preferences.
 
 # Script
-import requests
-import json
-import csv
-from datetime import datetime
-
-url = "https://jsearch.p.rapidapi.com/search"
-
-querystring = {"query":"cybersecurity","page":"1","num_pages":"1","date_posted":"all"}
-
-headers = {
+    # import requests
+    import json
+    import csv
+    from datetime import datetime
+    
+    url = "https://jsearch.p.rapidapi.com/search"
+    querystring = {"query":"cybersecurity","page":"1","num_pages":"1","date_posted":"all"}
+    
+    headers = {
     "x-rapidapi-key": "09a4dda10fmshab2b1b95642a0e3p1ea115jsn662ff359d59c",
     "x-rapidapi-host": "jsearch.p.rapidapi.com"
-}
+    }
+    
+    response = requests.get(url, headers=headers, params=querystring)
 
+    print(response.json())
+
+ # Making the API request
 response = requests.get(url, headers=headers, params=querystring)
 
-print(response.json())
-
-# Making the API request
-response = requests.get(url, headers=headers, params=querystring)
-
-# Check if the request was successful
+ # Check if the request was successful
 if response.status_code == 200:
     data = response.json()
 
@@ -86,7 +85,7 @@ if response.status_code == 200:
 
     # Extract job details and prepare data for CSV 
     
-# Data cleaning and handling
+ # Data cleaning and handling
 
     # job_list = []
     for job in jobs:
@@ -141,7 +140,7 @@ if response.status_code == 200:
     job_occupational_categories = ', '.join(job.get('job_occupational_categories', [])) if isinstance(job.get('job_occupational_categories', []), list) else 'N/A'
 
 
- # Append cleaned and formatted data to job list
+  # Append cleaned and formatted data to job list
     job_info = {
         'Job Title': job_title,
         'Company Name': employer_name,
@@ -161,20 +160,20 @@ if response.status_code == 200:
         'Job Remote': job_is_remote
     }
 
-# Append the job information to the job list
+ # Append the job information to the job list
     job_list.append(job_info)
 
-# Sort the job list by 'Job Title' and then by 'Company Name'
+ # Sort the job list by 'Job Title' and then by 'Company Name'
     # job_list.sort(key=lambda x: (x['Job Title'], x['Company Name']))
 
-# Define CSV file headers
+ # Define CSV file headers
 headers = [
     'Job Title', 'Company Name', 'Location', 'Experience', 'Date Posted', 'Job Description', 'Job URL',
     'Job Type', 'Salary', 'Industry', 'Skills', 'Qualifications', 'Employment Type', 'Remote Status',
     'Company Reviews', 'Job Remote'
 ]
 
-# Write cleaned and sorted data to a CSV file
+ # Write cleaned and sorted data to a CSV file
     # with open('jobs_data.csv', 'w', newline='', encoding='utf-8') as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=headers)
         writer.writeheader()
