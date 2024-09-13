@@ -11,11 +11,11 @@ The script performs the following tasks:
 4. **Export Data**: It writes the formatted data into a CSV file.
 
 # Prerequisites
-- Python 3.x
-- `requests` library
-- `json` library (standard in Python)
-- `csv` library (standard in Python)
-- `datetime` library (standard in Python)
+ - Python 3.x
+ - `requests` library
+ - `json` library (standard in Python)
+ - `csv` library (standard in Python)
+ - `datetime` library (standard in Python)
 
 # Installations 
 Install the `requests` library if you haven't already:
