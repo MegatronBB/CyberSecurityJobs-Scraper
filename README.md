@@ -53,7 +53,7 @@ pip install requests
 This `README.md` provides a clear overview of how the script works, installation instructions, and usage guidelines. Feel free to customize it further based on your specific needs or preferences.
 
 ## Script
-    # import requests
+    import requests
     import json
     import csv
     from datetime import datetime
