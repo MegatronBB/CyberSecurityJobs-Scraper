@@ -1,4 +1,4 @@
-![AIM](AIM.jpeg)
+![AIM](AIM.jpg)
 
 # Cybersecurity Job Scraper
 This Python script is designed to scrape entry-level cyber security job postings from the [JSearch API](https://rapidapi.com/jsearch/api/job-search). It retrieves job data, processes it, and saves it into both JSON and CSV formats for easy analysis.
