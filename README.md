@@ -46,7 +46,9 @@ pip install requests
 
 ## Notes
 ●	Ensure you have a valid API key from RapidAPI.
+
 ●	The API query is set to retrieve jobs related to "cybersecurity". Modify the query string parameters if you need different search criteria.
+
 ●	The script handles basic data cleaning and formatting. Further customization may be needed based on specific requirements or API changes. For further information or assistance, please refer to the RapidAPI documentation or contact the API provider.
 This `README.md` provides a clear overview of how the script works, installation instructions, and usage guidelines. Feel free to customize it further based on your specific needs or preferences.
 
