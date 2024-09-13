@@ -20,8 +20,6 @@ The script performs the following tasks:
 # Installations 
 Install the `requests` library if you haven't already:
 
-<!-- python code block -->
-python
 pip install requests
  
 # How It Works
