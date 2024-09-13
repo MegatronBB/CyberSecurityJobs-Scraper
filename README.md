@@ -1,6 +1,6 @@
 ![AIM](AIM.jpg)
 
-## Cybersecurity Job Scraper
+# Cybersecurity Job Scraper
 This Python script is designed to scrape entry-level cyber security job postings from the [JSearch API](https://rapidapi.com/jsearch/api/job-search). It retrieves job data, processes it, and saves it into both JSON and CSV formats for easy analysis.
  Overview
 The script performs the following tasks:
@@ -10,14 +10,14 @@ The script performs the following tasks:
 3. **Save Data**: It saves the raw data into a JSON file and formats the data for CSV output.
 4. **Export Data**: It writes the formatted data into a CSV file.
 
-## Prerequisites
+# Prerequisites
 - Python 3.x
 - `requests` library
 - `json` library (standard in Python)
 - `csv` library (standard in Python)
 - `datetime` library (standard in Python)
 
-## Installations 
+# Installations 
 Install the `requests` library if you haven't already:
 
 pip install requests
@@ -50,7 +50,7 @@ pip install requests
 ●	The script handles basic data cleaning and formatting. Further customization may be needed based on specific requirements or API changes. For further information or assistance, please refer to the RapidAPI documentation or contact the API provider.
 This `README.md` provides a clear overview of how the script works, installation instructions, and usage guidelines. Feel free to customize it further based on your specific needs or preferences.
 
-# Script
+## Script
     # import requests
     import json
     import csv
@@ -68,10 +68,10 @@ This `README.md` provides a clear overview of how the script works, installation
 
     print(response.json())
 
- # Making the API request
+ ## Making the API request
 response = requests.get(url, headers=headers, params=querystring)
 
- # Check if the request was successful
+ ## Check if the request was successful
 if response.status_code == 200:
     data = response.json()
 
@@ -85,7 +85,7 @@ if response.status_code == 200:
 
     # Extract job details and prepare data for CSV 
     
-# Data cleaning and handling
+## Data cleaning and handling
     # job_list = []
     for job in jobs:
     job_id = job.get('job_id', 'N/A').strip()
@@ -139,7 +139,7 @@ if response.status_code == 200:
     job_occupational_categories = ', '.join(job.get('job_occupational_categories', [])) if isinstance(job.get('job_occupational_categories', []), list) else 'N/A'
 
 
-# Append cleaned and formatted data to job list
+## Append cleaned and formatted data to job list
     job_info = {
         'Job Title': job_title,
         'Company Name': employer_name,
@@ -159,20 +159,20 @@ if response.status_code == 200:
         'Job Remote': job_is_remote
     }
 
-# Append the job information to the job list
+## Append the job information to the job list
     job_list.append(job_info)
 
-# Sort the job list by 'Job Title' and then by 'Company Name'
+## Sort the job list by 'Job Title' and then by 'Company Name'
     # job_list.sort(key=lambda x: (x['Job Title'], x['Company Name']))
 
-# Define CSV file headers
+## Define CSV file headers
 headers = [
     'Job Title', 'Company Name', 'Location', 'Experience', 'Date Posted', 'Job Description', 'Job URL',
     'Job Type', 'Salary', 'Industry', 'Skills', 'Qualifications', 'Employment Type', 'Remote Status',
     'Company Reviews', 'Job Remote'
 ]
 
-# Write cleaned and sorted data to a CSV file
+## Write cleaned and sorted data to a CSV file
     # with open('jobs_data.csv', 'w', newline='', encoding='utf-8') as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=headers)
         writer.writeheader()
