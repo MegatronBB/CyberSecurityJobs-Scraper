@@ -181,4 +181,4 @@ headers = [
         writer.writerows(job_list)
      print("Data has been successfully written to jobs_data.json and jobs_data.csv")
 
-
+![AI1](AI1.png)    ![AI2](AI2.png)
