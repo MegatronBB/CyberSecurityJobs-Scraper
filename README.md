@@ -184,4 +184,10 @@ headers = [
 
 ![AI2](AI2.png)
 
+# Examples 
+job_data.json & jobs_data.csv are examples out of output you will be given
+
+# Change Log: 09.16.2024 
+Scraper Updated to give better data output
+
 ![AIM](AIM.jpg)
